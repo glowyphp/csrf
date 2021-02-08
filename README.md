@@ -75,7 +75,7 @@ public function getTokenValue(): string
 ##### Example
 
 ```html
-<input type="hidden" name="<?php echo $csrf->getTokenName(); ?>" value="<?php echo $csrf->getTokenValue(); ?>"></input>
+<input type="hidden" name="<?php echo $csrf->getTokenName(); ?>" value="<?php echo $csrf->getTokenValue(); ?>" />
 ```
 
 ##### <a name="csrf_isValid"></a> Method: `isValid()`
