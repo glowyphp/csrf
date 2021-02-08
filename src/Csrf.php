@@ -31,8 +31,8 @@ class Csrf
      *
      * @throws CsrfException
      */
-    public function __construct(string $tokenNamePrefix = '__csrf_name_',
-                                string $tokenValuePrefix = '__csrf_value_',
+    public function __construct(string $tokenNamePrefix = '__csrf_name',
+                                string $tokenValuePrefix = '__csrf_value',
                                 int $strength = 32)
     {
         if ($strength < 32) {
