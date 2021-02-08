@@ -6,35 +6,42 @@ namespace Atomastic\Csrf;
 
 use RuntimeException as CsrfException;
 
+use function array_key_exists;
+use function extension_loaded;
+use function function_exists;
+use function hash;
+use function hash_equals;
+use function is_array;
+use function openssl_random_pseudo_bytes;
+use function random_bytes;
+use function session_status;
+
+use const PHP_SESSION_ACTIVE;
+
 class Csrf
 {
     /**
      * Token name
-     *
-     * @var string
      */
-    protected $tokenName;
+    protected string $tokenName;
 
     /**
      * Token value
-     *
-     * @var string
      */
-    protected $tokenValue;
+    protected string $tokenValue;
 
     /**
-     * Constructor.
-     *
-     * @param string  $tokenNamePrefix  Prefix for CSRF token name.
-     * @param string  $tokenValuePrefix Prefix for CSRF token value.
-     * @param int     $strength         Strength.
+     * @param string $tokenNamePrefix  Prefix for CSRF token name.
+     * @param string $tokenValuePrefix Prefix for CSRF token value.
+     * @param int    $strength         Strength.
      *
      * @throws CsrfException
      */
-    public function __construct(string $tokenNamePrefix = '__csrf_name',
-                                string $tokenValuePrefix = '__csrf_value',
-                                int $strength = 32)
-    {
+    public function __construct(
+        string $tokenNamePrefix = '__csrf_name',
+        string $tokenValuePrefix = '__csrf_value',
+        int $strength = 32
+    ) {
         if ($strength < 32) {
             throw new CsrfException('Atomastic Csrf instantiation failed. Minimum strength is 32.');
         }
@@ -46,23 +53,22 @@ class Csrf
             );
         }
 
-        $this->tokenName  = $tokenNamePrefix  . $this->getRandomValue($strength);
+        $this->tokenName  = $tokenNamePrefix . $this->getRandomValue($strength);
         $this->tokenValue = $tokenValuePrefix . $this->getRandomValue($strength);
 
-        if (!array_key_exists($this->tokenName, $_SESSION) || !is_array($_SESSION[$this->tokenName])) {
-            $_SESSION[$this->tokenName] = $this->tokenValue;
+        if (array_key_exists($this->tokenName, $_SESSION) && is_array($_SESSION[$this->tokenName])) {
+            return;
         }
+
+        $_SESSION[$this->tokenName] = $this->tokenValue;
     }
 
     /**
-     *
      * Returns a cryptographically secure random value.
      *
      * @param int $strength Strength.
      *
      * @throws CsrfException
-     *
-     * @return string
      */
     protected function getRandomValue(int $strength): string
     {
@@ -78,9 +84,9 @@ class Csrf
             return hash('sha512', mcrypt_create_iv($strength, MCRYPT_DEV_URANDOM));
         }
 
-        $message = "Cannot generate cryptographically secure random values. "
+        $message = 'Cannot generate cryptographically secure random values. '
                  . "Please install extension 'openssl' or 'mcrypt', or use "
-                 . "another cryptographically secure implementation.";
+                 . 'another cryptographically secure implementation.';
 
         throw new CsrfException($message);
     }
@@ -94,7 +100,7 @@ class Csrf
      */
     public function isValid(string $value): bool
     {
-        if (!isset($_SESSION[$this->getTokenName()])) {
+        if (! isset($_SESSION[$this->getTokenName()])) {
             return false;
         }
 
@@ -107,8 +113,6 @@ class Csrf
 
     /**
      * Get token name.
-     *
-     * @return string
      */
     public function getTokenName(): string
     {
@@ -117,8 +121,6 @@ class Csrf
 
     /**
      * Get token value.
-     *
-     * @return string
      */
     public function getTokenValue(): string
     {
