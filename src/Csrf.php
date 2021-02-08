@@ -23,12 +23,12 @@ class Csrf
     /**
      * Token name
      */
-    protected string $tokenName;
+    protected string $tokenName = '';
 
     /**
      * Token value
      */
-    protected string $tokenValue;
+    protected string $tokenValue = '';
 
     /**
      * @param string $tokenNamePrefix  Prefix for CSRF token name.
