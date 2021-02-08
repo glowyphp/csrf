@@ -31,8 +31,8 @@ class Csrf
      *
      * @throws CsrfException
      */
-    public function __construct(string $tokenNamePrefix = '_csrf_name_',
-                                string $tokenValuePrefix = '_csrf_value_',
+    public function __construct(string $tokenNamePrefix = '__csrf_name_',
+                                string $tokenValuePrefix = '__csrf_value_',
                                 int $strength = 32)
     {
         if ($strength < 32) {
@@ -88,14 +88,13 @@ class Csrf
     /**
      * Checks whether an incoming CSRF token name and value is valid.
      *
-     * @param string $name  The incoming token name.
      * @param string $value The incoming token value.
      *
      * @return bool True if valid, false if not.
      */
-    public function isValid(string $name, string $value): bool
+    public function isValid(string $value): bool
     {
-        if (!isset($_SESSION[$name])) {
+        if (!isset($_SESSION[$this->getTokenName()])) {
             return false;
         }
 
