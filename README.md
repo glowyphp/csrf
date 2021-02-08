@@ -31,7 +31,9 @@ use Atomastic\Csrf\Csrf;
 session_start();
 
 // Create the csrf object.
-$csrf = new Csrf();
+$csrf = new Csrf('__csrf_name_',
+                 '__csrf_value_',
+                 32);
 ```
 
 ### Methods
