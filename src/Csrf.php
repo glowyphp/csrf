@@ -56,7 +56,7 @@ class Csrf
         $this->tokenName  = $tokenNamePrefix . $this->getRandomValue($strength);
         $this->tokenValue = $tokenValuePrefix . $this->getRandomValue($strength);
 
-        if (array_key_exists($this->tokenName, $_SESSION) && is_array($_SESSION[$this->tokenName])) {
+        if (array_key_exists($this->tokenName, $_SESSION)) {
             return;
         }
 
