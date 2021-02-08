@@ -1,0 +1,32 @@
+{
+    "name": "atomastic/csrf",
+    "description": "Cross Site Request Forgery security component.",
+    "license": "MIT",
+    "keywords": [
+        "security", "csrf", "php", "atomastic"
+    ],
+    "support": {
+      "source": "https://github.com/atomastic/csrf",
+      "issues": "https://github.com/atomastic/csrf/issues"
+    },
+    "authors": [
+        {
+            "name": "Sergey Romanenko",
+            "email": "sergey.romanenko@flextype.org",
+            "homepage": "https://github.com/Awilum"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "autoload":{
+        "psr-4": {
+            "Atomastic\\Csrf\\": "src/"
+        }
+    },
+    "require-dev": {
+        "doctrine/coding-standard": "8.2.0",
+        "pestphp/pest": "^1.0.2",
+        "phpstan/phpstan": "^0.12.73"
+    }
+}
