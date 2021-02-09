@@ -38,8 +38,8 @@ class Csrf
      * @throws CsrfException
      */
     public function __construct(
-        string $tokenNamePrefix = '__csrf_name',
-        string $tokenValuePrefix = '__csrf_value',
+        string $tokenNamePrefix = '__csrf_token',
+        string $tokenValuePrefix = '',
         int $strength = 32
     ) {
         if ($strength < 32) {
@@ -53,14 +53,14 @@ class Csrf
             );
         }
 
-        $this->tokenName  = $tokenNamePrefix . $this->getRandomValue($strength);
-        $this->tokenValue = $tokenValuePrefix . $this->getRandomValue($strength);
+        $this->tokenName = $tokenNamePrefix;
 
-        if (array_key_exists($this->tokenName, $_SESSION)) {
-            return;
+        if (isset($_SESSION[$this->tokenName])) {
+            $this->tokenValue = $_SESSION[$this->tokenName];
+        } else {
+            $this->tokenValue = $tokenValuePrefix . $this->getRandomValue($strength);
+            $_SESSION[$this->tokenName] = $this->tokenValue;
         }
-
-        $_SESSION[$this->tokenName] = $this->tokenValue;
     }
 
     /**
