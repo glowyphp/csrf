@@ -1,13 +1,13 @@
 {
-    "name": "atomastic/csrf",
+    "name": "glowy/csrf",
     "description": "Cross Site Request Forgery security component.",
     "license": "MIT",
     "keywords": [
-        "security", "csrf", "php", "atomastic"
+        "security", "csrf", "php", "glowyphp", "glowy"
     ],
     "support": {
-      "source": "https://github.com/atomastic/csrf",
-      "issues": "https://github.com/atomastic/csrf/issues"
+      "source": "https://github.com/glowyphp/csrf",
+      "issues": "https://github.com/glowyphp/csrf/issues"
     },
     "authors": [
         {
@@ -21,12 +21,13 @@
     },
     "autoload":{
         "psr-4": {
-            "Atomastic\\Csrf\\": "src/"
+            "Glowy\\Csrf\\": "src/"
         }
     },
     "require-dev": {
-        "doctrine/coding-standard": "8.2.0",
-        "pestphp/pest": "^1.0.2",
-        "phpstan/phpstan": "^0.12.73"
+        "doctrine/coding-standard": "9.0.0",
+        "pestphp/pest": "^1.21.1",
+        "phpstan/phpstan": "^1.2.0",
+        "symfony/var-dumper": "^5.4.0"
     }
 }
