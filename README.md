@@ -1,6 +1,6 @@
-<h1 align="center">Csrf Component</h1>
+<h1 align="center">Csrf</h1>
 <p align="center">
-Csrf Component provides Cross Site Request Forgery protection by comparing provided token with session token to ensure request validity.
+Csrf Package provides Cross Site Request Forgery protection by comparing provided token with session token to ensure request validity.
 </p>
 <p align="center">
 <a href="https://github.com/glowyphp/csrf/releases"><img alt="Version" src="https://img.shields.io/github/release/glowyphp/csrf.svg?label=version&color=green"></a> <a href="https://github.com/glowyphp/csrf"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=green" alt="License"></a> <a href="https://packagist.org/packages/glowy/csrf"><img src="https://poser.pugx.org/glowy/csrf/downloads" alt="Total downloads"></a> <img src="https://github.com/glowyphp/csrf/workflows/Static%20Analysis/badge.svg?branch=dev"> <img src="https://github.com/glowyphp/csrf/workflows/Tests/badge.svg">
@@ -18,7 +18,7 @@ composer require glowy/csrf
 ```
 
 ### Resources
-* [Documentation](https://digital.flextype.org/glowyphp/components/csrf)
+* [Documentation](https://digital.flextype.org/glowyphp/packages/csrf)
 
 ### Tests
 
