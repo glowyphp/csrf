@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Atomastic\Csrf;
+namespace Glowy\Csrf;
 
 use RuntimeException as CsrfException;
 
@@ -43,13 +43,13 @@ class Csrf
         int $strength = 32
     ) {
         if ($strength < 32) {
-            throw new CsrfException('Atomastic Csrf instantiation failed. Minimum strength is 32.');
+            throw new CsrfException('Glowy Csrf instantiation failed. Minimum strength is 32.');
         }
 
         if (session_status() !== PHP_SESSION_ACTIVE) {
             throw new CsrfException(
                 'Invalid CSRF storage. ' .
-                'Use session_start() before instantiating the Atomastic Csrf.'
+                'Use session_start() before instantiating the Glowy Csrf.'
             );
         }
 

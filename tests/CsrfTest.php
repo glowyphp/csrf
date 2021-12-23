@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Atomastic\Csrf\Csrf;
+use Glowy\Csrf\Csrf;
 
 beforeEach(function (): void {
     session_start();
