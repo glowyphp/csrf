@@ -18,7 +18,7 @@ composer require glowy/csrf
 ```
 
 ### Resources
-* [Documentation](https://digital.flextype.org/glowyphp/packages/csrf)
+* [Documentation](https://awilum.github.io/glowyphp/csrf)
 
 ### Tests
 
