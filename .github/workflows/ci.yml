@@ -27,7 +27,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-        extensions:  pcntl, mcrypt_create_iv
+        extensions:  pcntl, mcrypt
         ini-values: disable_functions, error_reporting=E_ALL
         tools: composer:v2
         coverage: xdebug
