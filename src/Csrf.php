@@ -77,11 +77,11 @@ class Csrf
         }
 
         if (extension_loaded('openssl')) {
-            return hash('sha512', openssl_random_pseudo_bytes($strength));
+            return hash('sha512', \openssl_random_pseudo_bytes($strength));
         }
 
         if (extension_loaded('mcrypt')) {
-            return hash('sha512', mcrypt_create_iv($strength, MCRYPT_DEV_URANDOM));
+            return hash('sha512', \mcrypt_create_iv($strength, MCRYPT_DEV_URANDOM));
         }
 
         $message = 'Cannot generate cryptographically secure random values. '
