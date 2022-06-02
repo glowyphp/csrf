@@ -4,7 +4,7 @@ Csrf Package provides Cross Site Request Forgery protection by comparing provide
 </p>
 
 <p align="center">
-<a href="https://github.com/glowyphp/csrf/releases"><img alt="Version" src="https://img.shields.io/github/release/glowyphp/csrf.svg?label=version&style=for-the-badge"></a><a href="https://github.com/glowyphp/csrf"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge" alt="License"></a><a href="https://packagist.org/packages/glowy/csrf"><img src="https://poser.pugx.org/glowy/macroable/downloads?style=for-the-badge" alt="Total downloads"></a><img src="http://poser.pugx.org/glowy/csrf/require/php?style=for-the-badge">
+<a href="https://github.com/glowyphp/csrf/releases"><img alt="Version" src="https://img.shields.io/github/release/glowyphp/csrf.svg?label=version&style=for-the-badge"></a> <a href="https://github.com/glowyphp/csrf"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge" alt="License"></a> <a href="https://packagist.org/packages/glowy/csrf"><img src="https://poser.pugx.org/glowy/macroable/downloads?style=for-the-badge" alt="Total downloads"></a> <img src="http://poser.pugx.org/glowy/csrf/require/php?style=for-the-badge">
 </p>
 
 <br>
