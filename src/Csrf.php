@@ -76,11 +76,11 @@ class Csrf
             return hash('sha512', random_bytes($strength));
         }
 
-        if (extension_loaded('openssl')) {
+        if (extension_loaded('openssl') && function_exists('openssl_random_pseudo_bytes')) {
             return hash('sha512', openssl_random_pseudo_bytes($strength));
         }
 
-        if (extension_loaded('mcrypt')) {
+        if (extension_loaded('mcrypt') && function_exists('mcrypt_create_iv')) {
             return hash('sha512', mcrypt_create_iv($strength, MCRYPT_DEV_URANDOM));
         }
 

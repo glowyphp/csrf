@@ -1,3 +1,7 @@
+<a name="2.0.1"></a>
+# [2.0.1](https://github.com/glowyphp/csrf) (2021-07-02)
+* Fixed issue with openssl and mcrypt
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/glowyphp/csrf) (2021-12-23)
 * Released under Glowy PHP Organization.
@@ -6,7 +10,7 @@
 
 <a name="1.0.1"></a>
 # [1.0.1](https://github.com/glowyphp/csrf) (2021-02-09)
-* fix issue with token generation
+* Fixed issue with token generation
 
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/glowyphp/csrf) (2021-02-08)
