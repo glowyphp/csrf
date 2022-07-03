@@ -1,3 +1,7 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/glowyphp/csrf) (2022-07-03)
+* Moving to PHP 8.1
+
 <a name="2.0.1"></a>
 # [2.0.1](https://github.com/glowyphp/csrf) (2021-07-02)
 * Fixed issue with openssl and mcrypt
