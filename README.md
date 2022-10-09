@@ -4,7 +4,7 @@ Csrf Package provides Cross Site Request Forgery protection by comparing provide
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/license-MIT-blue.svg?label=License" alt="License MIT"> <a href="https://packagist.org/packages/glowy/csrf"><img src="https://poser.pugx.org/glowy/csrf/downloads" alt="Total downloads"></a> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/glowyphp/csrf?label=Stars"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/glowyphp/csrf?label=Forks"> <a href="https://hitsofcode.com"><img alt="Hits of Code" src="https://hitsofcode.com/github/glowyphp/csrf?branch=3.x"></a> <a href="https://discord.gg/ewQkqgfBAc"><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&label=Discord%20Chat" alt="Discord"></a>
+<img src="https://img.shields.io/badge/license-MIT-blue.svg?label=License" alt="License MIT"> <a href="https://packagist.org/packages/glowy/csrf"><img src="https://poser.pugx.org/glowy/csrf/downloads" alt="Total downloads"></a> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/glowyphp/csrf?label=Stars"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/glowyphp/csrf?label=Forks"> <a href="https://hitsofcode.com"><img alt="Hits of Code" src="https://hitsofcode.com/github/glowyphp/csrf?branch=3.x"></a>
 </p>
 
 <br>
